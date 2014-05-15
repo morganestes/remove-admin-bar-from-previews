@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Remove Admin Bar from Previews
- * Plugin URI: http://www.morganestes.me
+ * Plugin URI: https://github.com/morganestes/admin-bar-remove-preview
  * Description: Removes the Admin Bar from Post Previews.
  * Version: 0.2.0
  * Author: Morgan Estes

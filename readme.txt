@@ -63,6 +63,6 @@ This release adds the ability to customize the notice bar from within a theme.
 
 These features are planned for future releases:
 
-* Customizable notification bar (styles and text).
-* Multisite-enabled.
-* Translation-capable.
+* [x] Customizable notification bar (styles and text).
+* [ ] Multisite-enabled.
+* [ ] Translation-capable.
