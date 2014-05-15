@@ -51,7 +51,7 @@ add_action( 'admin_init', 'abp_settings_api_init' );
 /**
  * Filter and validate the options.
  *
- * @param $options Serialized string set by *_option().
+ * @param array $options Array of options created by the serialized string set by *_option().
  *
  * @return array The filtered options.
  */
@@ -75,17 +75,30 @@ function abp_settings_field() {
 	<br>
 	<input type="checkbox" name="abp_preview_settings[show_notice_bar]" id="abp-show-notice" value="1" <?php checked( $options['show_notice_bar'], 1 ); ?> />
 	<label for="abp-show-notice"><?php _e( 'Show a reminder notice when previewing a post', 'abp-hidden' ); ?></label>
-<?php
+	<?php
 }
 
+/**
+ * Create the HTML for the notice bar. Can be overridden in a theme by including a template file.
+ */
 function abp_notice_bar() {
-	?>
-	<div class="abp-notice">
-		<p><?php _e( 'This is a preview, and changes may not have been saved.', 'abp-hidden' ); ?></p>
-	</div>
-<?php
+	$template_name = 'abp-notice-bar-template.php';
+	$path          = locate_template( $template_name );
+
+	if ( empty( $path ) ) {
+		$path = plugin_dir_path( __FILE__ ) . '/inc/' . $template_name;
+	}
+
+	include_once $path;
 }
 
+/**
+ * Add the stylesheet for the notice bar. Can be overridden in a theme by including a stylesheet.
+ */
 function abp_notice_bar_style() {
-	wp_enqueue_style( 'abp-preview-notice', plugins_url( '/preview-notice.css', __FILE__ ) );
+	if ( file_exists( get_stylesheet_directory() . '/abp-preview-notice.css' ) ) {
+		wp_enqueue_style( 'abp-preview-notice', get_stylesheet_directory_uri() . '/abp-preview-notice.css' );
+	} else {
+		wp_enqueue_style( 'abp-preview-notice', plugins_url( '/preview-notice.css', __FILE__ ) );
+	}
 }

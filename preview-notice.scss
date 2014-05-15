@@ -9,15 +9,14 @@
   padding: 5px 0 5px 0;
   text-align: center;
   font-size: 12px;
-  font-family: "Cabin", Arial, sans-serif;
   background-color: orangered;
-  border-bottom: 1px solid orange;
+  border-bottom: 1px solid red;
   z-index: auto;
+
   p {
+	color: white;
 	font-weight: bold;
-  }
-
-  .dismiss {
-
+	letter-spacing: .15em;
+	font-family: "Helvetica Neue Light", "HelveticaNeue-Light", "Helvetica Neue", Calibri, Helvetica, Arial, sans-serif;
   }
 }
