@@ -1,5 +1,5 @@
 === Remove Admin Bar from Previews ===
-Contributors: morganestes
+Contributors: morganestes, jessicaestes
 Donate link: http://morganestes.com/donate
 Tags: admin bar, editor, preview, posts
 Requires at least: 3.8
